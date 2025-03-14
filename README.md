@@ -20,11 +20,51 @@
 ![Initializing](pics/initialization.png)
 
 **ایجاد فایل .gitignore**
-
+یک فایل با نام .gitignore میسازیم و در آن فایلهایی را که میخواهیم توسط گیت ترک نشوند قرار میدهیم. برای نمونه میتوان فایلهای پوشه .idea را در این فایل مشخص کنیم تا این فایلها که مربوط به ادیتور ما است ترک نشوند و دچار کانفلیکت های متعدد نشویم. همچنین میتوانیم فایلهای حجیم را که پسوندهای صوتی یا ویدیویی دارند را نیز در این فایل قرار بدهیم تا حجم مخزن ما بیش از حد زیاد نشود.
 <!-- Reza -->
 
 **استقرار خودکار با GitHub Actions**
+یک گردش‌کار مربوط به GitHub Actions ایجاد میکنیم تا پروژه به‌طور خودکار در GitHub Pages بالا بیاید و هنگام آپدیت شدن به شاخه main صفحه Github Pages ما نیز بروزرسانی شود. کد اصلی پیکربندی به به صورت زیر است:
+```
+name: Deploy static content to Pages
 
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+```
 <!-- Reza -->
 
 **کامیت‌ها**
