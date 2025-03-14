@@ -1,4 +1,4 @@
-# **آزمایش اول - مدیریت نسخ پروژه و یک‌پارچه‌سازی و استقرار مستمر**
+![image](https://github.com/user-attachments/assets/3e38be54-2d87-4026-9c4a-005e035d9e53)# **آزمایش اول - مدیریت نسخ پروژه و یک‌پارچه‌سازی و استقرار مستمر**
 
 
 ### گزارش آزمایش اول: فرانت‌اند ایستا با قابلیت استقرار خودکار
@@ -83,6 +83,11 @@ jobs:
 
 **رفع Conflict**
 ##### کانفلیکت اول:
+این کانفلیکت زمانی بوجود آمد که شاخه feature-car-details را با شاخه dev مرج کردیم و این در حالی بود که دکمه مربوط به صفحه car details در صفحه index.html هر دو شاخه در جای یکسانی وجود نداشت و به طور کلی navbar ها تفاوت داشتند. پس دچار کانفلیکت مرج شدیم که در تصاویر زیر مشاهده میکنیم و سپس در ادامه آن را برطرف کرده و کامیت انجام دادیم.
+![image](https://github.com/user-attachments/assets/afb5a0dd-1cfb-4b1e-811b-d474af32037d)
+![image](https://github.com/user-attachments/assets/8018ca99-f943-4209-aff1-1e39479fb39c)
+![image](https://github.com/user-attachments/assets/e5b1b75c-33c0-49b6-8420-3e73d4762ee6)
+
 
 <!-- Reza -->
 
